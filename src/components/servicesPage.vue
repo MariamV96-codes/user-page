@@ -1,59 +1,64 @@
-<template>
+<template >
    <mainPage :units='units'/>
- <div class="secondContainer">
+ <div class="mx-auto my-0 px-3.5  w-11/12 text-right text-base">
    <userName/>
-    <form action=""> 
-      <h3>أطلب الخدمة المرجوة بكل اريحية</h3>
-      <div class="unitNumber"/>
-      <p> <span> * </span> اختر رقم الوحدة</p>
-      <div class="wrapperForm ">
-       <label  class="control control-radio"> 
-         A 08 - 01
-       <input  type="radio" name="radio" value="A 08 - 01" v-model="units">
-         <div class="control_indicator"></div>
-         </label>
-      </div>
-      <div class="wrapperForm ">
-       <label  class="control control-radio"> 
-         A 08 - 02
-       <input  type="radio" name="radio" value="A 08 - 02" v-model="units" >
-         <div class="control_indicator"></div>
-         </label>
-      </div>
-         <p> <span>*</span>اختر نوع الخدمة</p>
-         <div class="serviceType" v-for="service in services" :key="service.key">
-            <label class="control control-checkbox">
-               {{service}} 
-           <input  type="checkbox" name="1" id="" > 
-           <div class="control_indicator control_indicator2"></div>
-          </label>
+    <form action=""
+     class="border-[1.3px] rounded-lg border-secondaryColor px-6" > 
+      <h2 class="text-center font-CairoBold text-lg pt-6	 ">أطلب الخدمة المرجوة بكل اريحية</h2>
 
+      <div class="py-6">
+         <p class="pb-2.5 font-CairoBold text-secondaryColor"> 
+         <span class="text-[#cf4037]"> * </span> اختر رقم الوحدة</p>
+         <div class="pb-2.5">
+            <label  class="" for="A1"> A 08 - 01 </label>
+            <input   class=" border-secondaryColor text-secondaryColor " style="box-shadow: none" type="radio"
+              name="A1" value="A 08 - 01" v-model="units">
+  
          </div>
-      <div class="otherServices">
-         <textarea placeholder =" ...أترك ملاحظة " cols="48" rows="6" ></textarea>
-      </div>
-
-      <div class="uploadPic">
-         <p>ارفاق صورة</p>
-         <div class="field">
-            <input type="file" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+         <div class="">
+            <label  class="" for="A2"> A 08 - 02 </label>
+            <input class=" border-secondaryColor text-secondaryColor"  style="box-shadow: none" type="radio" name="A2" value="A 08 - 02" v-model="units" >
          </div>
       </div>
 
-      <button class="sendBtn">إرسال</button>
+
+
+         <p class="pb-2.5 font-CairoBold text-secondaryColor"> 
+            <span class="text-[#cf4037]">*</span>اختر نوع الخدمة</p>
+         <div class="pb-3.5" v-for="service in services" :key="service.key">
+            <label class=""> {{service}} </label>
+           <input  class="rounded text-secondaryColor  border-secondaryColor "  style="box-shadow: none" type="checkbox" name="1" id="" > 
+
+         </div>
+      <div class="pb-5 ">
+         <textarea class="border-[1.3px] rounded border-secondaryColor placeholder-style form-textarea mt-1  w-80	" style="box-shadow: none" placeholder =" ...أترك ملاحظة " rows="4" ></textarea>
+      </div>
+
+      <div class="pb-5 ">
+         <p class="  p-2 font-CairoBold text-secondaryColor ">ارفاق صورة</p>
+         <input class="border-[1.3px] rounded border-secondaryColor p-1 " type="file" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+      </div>
+
+      <button class="py-2 px-36 mt-2 mb-6 mr-2.5  bg-mainColor text-[#fff] rounded  ">إرسال</button>
     </form>
-         <div class="orWrapper">
-         <p class="line"> أو</p>
-      </div>
-    <div class="contactInfo">
-      <h3>الاستفسار عن الخدمات عن طريق</h3>
-      <ul>
-         <li>877-255-7945</li>
-         <li>877-255-7945</li>
-         <li>info@arbah.com</li>
-         <li>385 Madinah Place Suite 878</li>
+         <div class="my-14 text-center text-base">
+         <p 
+         class=" line  "> أو</p>
+         </div>
+         
+    <div class="border-[1.3px] rounded-lg border-secondaryColor  px-9 py-6 mb-16 	 ">
+      <h3 class="text-center font-CairoBold text-lg  ">الاستفسار عن الخدمات عن طريق</h3>
+      <ul class="py-10" >
+         <li class="pb-3">877-255-7945</li>
+         <li class="pb-3">877-255-7945</li>
+         <li class="pb-3">info@arbah.com</li>
+         <li class="pb-3">385 Madinah Place Suite 878</li>
       </ul>
-      <button class="contactBtn">التواصل و طلب المساعدة</button>
+      <button class=" text-center border-[1.3px] rounded
+       border-secondaryColor 
+       bg-[#ecebe1] 
+       text-secondaryColor 
+        py-2.5 px-14 mt-2 mb-6">التواصل و طلب المساعدة</button>
     </div>
 
  </div>
@@ -86,220 +91,3 @@ import mainPage from './mainPage.vue'
  
 }
 </script>
-<style>
-
-.secondContainer{
-   font-family: "Cairo-Regular", serif;
-  /* font-size: 20px; */
-  margin: 0 auto;
-  margin-top: 88px;
-  width: 90%;
-  text-align: right;
-  color: #244C5A;
-}
-h3{
-   /* text-align: center; */
-   padding-right: 25px;
-}
-form, .contactInfo{
-     border: 1px solid #D3BC8D ;
-  border-radius: 10px;
-  padding: 20px 0;
-}
-.contactInfo h3{
-   padding: 20px ;
-}
-.contactInfo li{
-   padding: 6px;
-}
-
-.wrapperForm, .serviceType{
-   padding: 3px 44px  5px 0;
-}
-
-
-.field{
-   border:#7e8080 0.2px solid;
-   border-radius: 5px;
-   width:343px;
-   height: 50px;
-   display: inline-block;
-   margin-right:17px;
-   text-align: center;
-   margin-bottom: 22px;
-}
-.sendBtn{
-   outline: none;
-   border-radius: 5px;
-   background-color:#244C5A ;
-   color: #fff;
-   text-align: center;
-   text-decoration: none;
-   margin-right: 37px;
-   padding: 0.4rem 9rem;
-   font-family: "Cairo-Regular", serif;
-   border: none;
-   margin-bottom: 29px;
-   cursor: pointer;
-   font-size: 19px;
-}
-.orWrapper{
-    margin: 40px 0;
-
-}
-.orWrapper p{
-   text-align: center;
-}
-.line:before{
-  content:" ";
-  display: block;
-  height: 1px;
-  width: 50px;
-  position: absolute;
-  top: 51%;
-  left: 32%;
-  background: #D3BC8D;
-}
-.line{
-   position: relative;
-  max-width: 500px;
-  margin: 10px auto;
-  text-align: center;
-
-}
-.line:after{
-  content:" ";
-  height: 1px;
-  width: 50px;
-  background: #D3BC8D;
-  display: block;
-  position: absolute;
-  top: 51%;
-  right: 35%;
-}
-.contactInfo{
-   margin: 50px 0;
-   padding: 10px;
-}
-.contactInfo li{
-   list-style: none;
-   padding-right: 38px;
-}
-.contactBtn{
-   color: #D3BC8D;
-   background-color:#ecebe1 ;
-   border: 1.2px solid #D3BC8D;
-   border-radius: 5px;
-   padding:0.5rem 3rem;
-   margin: 33px;
-   font-size: 15px;
-   font-family: "Cairo-Regular", serif;
-   font-size: 19px;
-   cursor: pointer;
-}
-label{
-   padding-right: 6px;
-}
-.control {
-   text-align: right;
-    display: inline-block;
-    position: relative;
-    /* padding-top: 2px; */
-    cursor: pointer;
-}
-    .control input {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
-.control_indicator {
-    position: absolute;
-    top: 6.3px;
-    left: 100%;
-    height: 19px;
-    width: 19px;
-    background: #ffffff;
-    border: 1.4px solid #d3bc8d;
-}
-.control:hover input ~ .control_indicator,
-.control input:focus ~ .control_indicator {
-    background: #fff6f6;
-}
-
-.control input:checked ~ .control_indicator {
-    background: #D3BC8D;
-}
-
-
-.control_indicator:after {
-    box-sizing: unset;
-    content: '';
-    position: absolute;
-    display: none;
-}
-.control input:checked ~ .control_indicator:after {
-    display: block;
-}
-.control-radio .control_indicator {
-    border-radius: 50%;
-}
-
-.control-radio .control_indicator:after {
-    left: 5.2px;
-    top: 5.2px;
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    background: #ffffff;
-    transition: background 250ms;
-}
-
-
-
-/* checkbox */
-.control_indicator2 {
-    position: absolute;
-    top: 9px;
-    left: 100.6%;
-    height: 19px;
-    width: 19px;
-    background: #ffffff;
-    border: 1.4px solid #d3bc8d;
-    border-radius: 4px;
-}
-
-.control-checkbox .control_indicator2:after {
-    left: 6px;
-    top: 2px;
-    width: 3px;
-    height: 8px;
-    border: solid #ffffff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-.otherServices{
-   padding: 10px 24px;
-
-}
-.otherServices textarea{
-   border-radius: 4px;
-   border: 1.4px solid #d3bc8d;
-}
-/* ::-webkit-resizer {
-} */
-textarea::placeholder { 
-  color: rgba(128, 128, 128, 0.5);
-  font-size: 16px;
-  padding-left: 64%;
-  padding-top: 30px;
-  font-family: "Cairo-Regular", serif;
-}
-.uploadPic{
-   padding: 3px 3px  5px 0;
-   color: #D3BC8D;
-   font-family: "Cairo-Bold", serif;
-
-}
-
-
-</style>

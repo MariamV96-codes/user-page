@@ -1,21 +1,20 @@
 <template>
-<div class="container">
+<div class="mx-auto my-0 px-3.5 w-11/12 text-right text-base  ">
  <userName/>
-  <p> <span> {{units}}  </span> ملفات وحدة رقم</p>
-  <div class="wrapper" v-for="File in Files" :key="File.number">
-    <p> <span class="bold"> {{File.number}} </span>{{File.type}}</p>
+  <p class="pr-6  font-CairoBold"> <span class="text-secondaryColor"> {{units}}  </span> ملفات وحدة رقم</p>
+  <div class="bg-[#fff] my-5 py-3.5 rounded-lg	"
+        v-for="File in Files" :key="File.number">
+    <p class="pr-6"> <span class="font-CairoBold pr-2.5 "> {{File.number}} </span>{{File.type}}</p>
   </div>
-  <div class="wrapper">
-    <p> <span class="bold">pdf.الصك</span></p>
+  <div class="bg-[#fff] my-5 py-3.5 rounded-lg">
+    <p class="pr-6"> <span class="font-CairoBold">pdf.الصك</span></p>
   </div>
-  <button class="backbtn">الرجوع</button>
-  <!-- <ServicesPage/> -->
+  <a href="#" class="ml-2 mt-1 float-left underline underline-offset-6 text-base">الرجوع</a>
 </div>
 </template>
 
 <script>
   import userName from './userName.vue';
-// import ServicesPage from './servicesPage.vue';
 
 export default {
   name: 'mainPage',
@@ -45,61 +44,3 @@ export default {
 }
 </script>
 
-<style>
-*{
-  /* outline: red 1px solid; */
-}
-
-
-.container{
-
-  color: #244C5A;
-  /* font-size: 20px; */
-  margin: 0 auto;
-  width: 90%;
-  font-family: "Cairo-Regular", serif;
-}
-h1{
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-p{
-   text-align: right;
-  padding-right: 13px;
-
-}
-span{
-  color: #D3BC8D; 
-  font-family: "Cairo-Bold", serif;
-}
-.bold{
-    color: #244C5A;
-}
-.wrapper {
-  background-color: #fff; 
-  border-radius: 6px;
-  margin: 19px 0;
-  padding: 10px 0;
-  /* height: 9%; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: right ;
-}
-
-.backbtn{
-  color:#244C5A ;
-  border: none;
-  text-decoration: underline;
-  text-underline-offset:6px;
-  cursor: pointer;
-  text-align: right;
-  margin-top:17px ;
-  padding-left: 7px;
-  font-family: "Cairo-Regular", serif;
-  background-color: #f3f6f6;
-  font-size: 19px; 
-}
-
-</style>

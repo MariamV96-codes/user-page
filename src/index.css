@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .placeholder-style::placeholder {
+    padding-top:30px;
+    padding-left: 70%;
+  };
+/* .line:before{
+  content:'text_from_before';
+  display: block;
+  height: 1.5px;
+  width: 50px;
+  position: absolute;
+  top: 51%;
+  left: 33%;
+  background: #D3BC8D;
+}
+.line{
+   position: relative;
+  max-width: 500px;
+  margin: 10px auto;
+  text-align: center;
+
+}
+.line::after{
+  content:" text from after";
+  height: 1.5px;
+  width: 50px;
+  background: #D3BC8D;
+  display: block;
+  position: absolute;
+  top: 51%;
+  right: 33%;
+}; */
+
+
+
+.line::before{
+  content: "" !important;
+  display: block;
+  height: 1px;
+  width: 50px;
+  position: absolute;
+  top: 51%;
+  left: 32%;
+  background: #D3BC8D;
+}
+.line{
+   position: relative;
+  max-width: 500px;
+  margin: 10px auto;
+}
+.line:after{
+  content:"";
+  height: 1px;
+  width: 50px;
+  background: #D3BC8D;
+  display: block;
+  position: absolute;
+  top: 51%;
+  right: 35%;
+}
+  
+}
+
+@layer base{
+    @font-face {
+    font-family: "CairoBold";
+    src: local("Cairo-Bold"), url(./assets/Fonts/Cairo-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "CairoRegular";
+    src: local("Cairo-Regular"), url(./assets/Fonts/Cairo-Regular.ttf) format("truetype");
+  }
+}
